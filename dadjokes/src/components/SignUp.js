@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
 
 function SignUp({ errors, touched, status }) {
-	const [user, setUser] = useState([]);
-
-	useEffect(() => {}, []);
-
 	return (
 		<div>
 			<h3>To see all Dad Jokes Please sign up fro an an account:</h3>
@@ -44,7 +41,11 @@ export default withFormik({
 			.ensure()
 			.min(5, 'Passwords must be at least 5 characters long'),
 	}),
-	handleSubmit: (values, { setStatus }) => {
-		// build out the submit function with axios here....
+	handleSubmit: (values) => {
+		// build out the submit function with axios here...,
+		axios
+			.post('https://reqres.in/api/users', values)
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err));
 	},
 })(SignUp);
