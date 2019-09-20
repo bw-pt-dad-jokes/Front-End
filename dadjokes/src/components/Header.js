@@ -1,4 +1,7 @@
 import React from 'react';
+
+import NavButton from './NavButtons';
+
 import './Header.scss';
 
 function Header() {
@@ -6,8 +9,8 @@ function Header() {
 		<div className='headerWrapper'>
 			<h1 class='headline'>DAD JOKES</h1>
 			<nav className='navigation'>
-				<button>Sign up</button>
-				<button>Log In</button>
+				<NavButton buttonText='Sign Up' />
+				<NavButton buttonText='Log In' />
 			</nav>
 		</div>
 	);
