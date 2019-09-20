@@ -1,6 +1,8 @@
+@import '../variables.scss';
+
 .headerWrapper {
 	width: 90%;
-	border: 2px solid $bright-orange;
+	border: 2px solid $header-color;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
