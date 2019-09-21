@@ -15,5 +15,11 @@ $black-pearl: #030620; // a shade of black
 
 /** font styles **/
 $header-font-stack: 'Amatic SC', cursive;
-$header-font-color: $orange;
-$basic-font-color: $black-pearl;
+$header-color: $orange;
+$text-color: $black-pearl;
+
+$button-color: $orange;
+$button-highlight: lighten($orange, 30%);
+$backgrounds--other: $french-gray;
+$button-color-text: $french-gray;
+$button-color-text-highlight: darken($french-gray, 45%);
