@@ -1,13 +1,13 @@
 import React from 'react';
 
-import NavButton from './NavButtons';
+import NavButton from './NavButton';
 
 import './Header.scss';
 
 function Header() {
 	return (
 		<div className='headerWrapper'>
-			<h1 class='headline'>DAD JOKES</h1>
+			<h1 className='headline'>DAD JOKES</h1>
 			<nav className='navigation'>
 				<NavButton buttonText='Sign Up' />
 				<NavButton buttonText='Log In' />
