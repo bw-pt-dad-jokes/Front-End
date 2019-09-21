@@ -1,0 +1,19 @@
+/****
+for html use this to get font ->
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+
+font-family: 'Amatic SC', cursive;
+***/
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+// color pallette
+$orange: #ff5e13; // bright orange
+$wild-sand: #f6f6f6; // light gray color
+$french-gray: #bcbac6; // silverish gray
+$black-pearl: #030620; // a shade of black
+
+/** font styles **/
+$header-font-stack: 'Amatic SC', cursive;
+$header-font-color: $orange;
+$basic-font-color: $black-pearl;
