@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.scss';
 import AppRouter from './components/AppRouter';
-
+import Header from './components/Header';
 
 function App() {
-  return (
-    <div className='App'>
-      <h1>App file</h1>
-      <AppRouter />
-    </div>
-  );
+	return (
+		<div className='App'>
+			<Header />
+			<AppRouter />
+		</div>
+	);
 }
 
 export default App;
