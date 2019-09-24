@@ -13,13 +13,13 @@ function SignUp({ errors, touched, status }) {
 					To see all Dad Jokes Please sign up for an an account:
 				</Header>
 				<Form>
-					{touched.email && errors.email && <p>{errors.email}</p>}
+					{touched.email && errors.email && <p className='error-message'>{errors.email}</p>}
 
 					<Forms.Field>
 						<Label htmlFor='user-email'>User Email</Label>
 						<Field input='email' id='user-email' name='email' placeholder='Email@address.com' />
 					</Forms.Field>
-					{touched.password && errors.password && <p>{errors.password}</p>}
+					{touched.password && errors.password && <p className='error-message'>{errors.password}</p>}
 					<Forms.Field>
 						<Label htmlFor='user-password'>Password</Label>
 						<Field input='password' id='user-password' name='password' placeholder='123abc@' />
