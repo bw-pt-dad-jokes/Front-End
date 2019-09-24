@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button, Form as Forms, Container, Message } from 'semantic-ui-react';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
 const LoginSchema = yup.object().shape({
-	username: yup.string().required('Username is required'),
+	username: yup.string().required('Username is required!'),
 	password: yup
 		.string()
 		.required('Password is required')
@@ -47,7 +48,7 @@ export default function LoginPage() {
 							submitButton(values);
 						}}
 						render={({ handleSubmit, values, touched, errors }) => (
-							<Form onSubmit={handleSubmit}>
+							<Forms onSubmit={handleSubmit}>
 								{errors.username && touched.username && <p className='error'>{errors.username}</p>}
 								<Field
 									name='username'
@@ -58,7 +59,7 @@ export default function LoginPage() {
 									}}
 								/>{' '}
 								<br />
-								{errors.password && touched.password && <p className='error'>{errors.password}</p>}
+								{errors.password && touched.password &&  <p className='error'>{errors.password}</p>}
 								<Field
 									type='password'
 									name='password'
@@ -69,8 +70,8 @@ export default function LoginPage() {
 									}}
 								/>{' '}
 								<br />
-								<button type='submit'>Login Me In Scotty.....</button>
-							</Form>
+								<Button type='submit' style={{background: '#ff5e13'}}>Login Me In Scotty.....</Button>
+							</Forms>
 						)}
 					/>
 				</div>
