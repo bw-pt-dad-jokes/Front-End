@@ -2,23 +2,33 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
+import { Button, Form as Forms, Label, Container, Header } from 'semantic-ui-react';
+import './SignupLogin.scss';
 
 function SignUp({ errors, touched, status }) {
 	return (
-		<div>
-			<h3>To see all Dad Jokes Please sign up fro an an account:</h3>
-			<Form>
-				{touched.email && errors.email && <p>{errors.email}</p>}
-				<label htmlFor='user-email'>User Email</label>
-				<Field input='email' id='user-email' name='email' placeholder='Email@address.com' />
+		<Container>
+			<div>
+				<Header as='h3' className='sign-up'>
+					To see all Dad Jokes Please sign up for an an account:
+				</Header>
+				<Form>
+					{touched.email && errors.email && <p>{errors.email}</p>}
 
-				{touched.password && errors.password && <p>{errors.password}</p>}
-				<label htmlFor='user-password'>Password</label>
-				<Field input='password' id='user-password' name='password' placeholder='123abc@' />
+					<Forms.Field>
+						<Label htmlFor='user-email'>User Email</Label>
+						<Field input='email' id='user-email' name='email' placeholder='Email@address.com' />
+					</Forms.Field>
+					{touched.password && errors.password && <p>{errors.password}</p>}
+					<Forms.Field>
+						<Label htmlFor='user-password'>Password</Label>
+						<Field input='password' id='user-password' name='password' placeholder='123abc@' />
+					</Forms.Field>
 
-				<button type='submit'>Sign Me up Scotty....</button>
-			</Form>
-		</div>
+					<Button type='submit'>Sign Me up Scotty....</Button>
+				</Form>
+			</div>
+		</Container>
 	);
 }
 
