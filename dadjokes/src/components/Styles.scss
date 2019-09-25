@@ -1,1 +1,22 @@
 @import '../variables.scss';
+
+.ui.button,
+.ui.big.button {
+	background-color: $button-color;
+	&:link {
+		background-color: $button-color;
+	}
+	&:visited {
+		background-color: $button-visited;
+		color: $text-visited;
+	}
+	&:visited:hover {
+		background-color: $button-visited;
+		color: $text-visited;
+	}
+	&:hover {
+		background-color: $button-highlight;
+	}
+	&:active {
+	}
+}
