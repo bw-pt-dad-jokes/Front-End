@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Grid, Card } from 'semantic-ui-react';
+import { Grid, Card } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 function JokesDisplay() {
@@ -12,7 +12,6 @@ function JokesDisplay() {
 			.then((res) => setJokes(res.data))
 			.catch((err) => console.log('Error ', err));
 	}, []);
-	console.log(jokes);
 
 	return (
 		<JokeWrapper>

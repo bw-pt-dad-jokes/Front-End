@@ -2,8 +2,7 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
-import { Button, Form as Forms, Message } from 'semantic-ui-react';
-import styled from 'styled-components';
+import { Button, Message } from 'semantic-ui-react';
 
 function SignUp({ errors, touched, status }) {
 	return (
