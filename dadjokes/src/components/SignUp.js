@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 import { Button, Message } from 'semantic-ui-react';
+import './Styles.scss';
 
 function SignUp({ errors, touched, status }) {
 	return (
@@ -26,11 +27,28 @@ function SignUp({ errors, touched, status }) {
 					<Form>
 						{touched.username && errors.username && <Message color='red'>{errors.username}</Message>}
 						<label htmlFor='user-username'>User Email</label>
-						<Field input='text' id='user-username' name='username' placeholder='Username...' />
+						<Field
+							input='text'
+							id='user-username'
+							name='username'
+							placeholder='Username...'
+							style={{
+								width: '200px',
+							}}
+						/>
 
-						{touched.password && errors.password && <p>{errors.password}</p>}
+						{touched.password && errors.password && <Message color='red'>{errors.password}</Message>}
 						<label htmlFor='user-password'>Password</label>
-						<Field input='password' id='user-password' name='password' placeholder='123abc@' />
+						<Field
+							input='password'
+							id='user-password'
+							name='password'
+							placeholder='123abc@'
+							className='signup'
+							style={{
+								width: '200px',
+							}}
+						/>
 
 						<Button type='submit' style={{ background: '#ff5e13' }}>
 							Sign Me up Scotty....
@@ -50,7 +68,10 @@ export default withFormik({
 		};
 	},
 	validationSchema: yup.object().shape({
-		username: yup.string().required('username Required'),
+		username: yup
+			.string()
+			.required('username Required')
+			.min(3, 'Need at least 3 characters please'),
 		password: yup
 			.string()
 			.required()
