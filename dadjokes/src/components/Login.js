@@ -13,15 +13,27 @@ const LoginSchema = yup.object().shape({
 });
 
 function submitButton(values) {
-	axios
-		.post('https://reqres.in/api/users', values)
-		.then((res) => {
-			console.log(res);
-		})
-		.catch((err) => {
-			console.log('Err', err);
-		});
+	console.log(values.username)
+
+	// axios({
+	// 	method: 'post',
+	// 	url: '/login',
+	// 	data: {
+	// 	  username: 'Finn',
+	// 	  lastName: 'Williams'
+	// 	}
+	//   });
+
+	// axios
+	// 	.post('https://reqres.in/api/users', values)
+	// 	.then((res) => {
+	// 		console.log(res);
+	// 	})
+	// 	.catch((err) => {
+	// 		console.log('Err', err);
+	// 	});
 }
+
 
 export default function LoginPage() {
 	return (
@@ -49,7 +61,8 @@ export default function LoginPage() {
 						}}
 						render={({ handleSubmit, values, touched, errors }) => (
 							<Forms onSubmit={handleSubmit}>
-								{errors.username && touched.username && <p className='error'>{errors.username}</p>}
+								{console.log(errors)}
+								{errors.username && touched.username && <Message color='red'>{errors.username}</Message>}
 								<Field
 									name='username'
 									value={values.username}
