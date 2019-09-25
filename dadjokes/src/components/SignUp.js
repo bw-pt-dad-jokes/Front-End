@@ -3,24 +3,29 @@ import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 import { Button, Form as Forms, Message } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 function SignUp({ errors, touched, status }) {
 	return (
 		<div>
 			<h3>To see all Dad Jokes Please sign up fro an an account:</h3>
-			<Form>
-				{touched.username && errors.username && <Message color='red'>{errors.username}</Message>}
-				<label htmlFor='user-username'>User Email</label>
-				<Field input='text' id='user-username' name='username' placeholder='Username...' />
+			<FormWrapper>
+				<div>
+					<Form>
+						{touched.username && errors.username && <Message color='red'>{errors.username}</Message>}
+						<label htmlFor='user-username'>User Email</label>
+						<Field input='text' id='user-username' name='username' placeholder='Username...' />
 
-				{touched.password && errors.password && <p>{errors.password}</p>}
-				<label htmlFor='user-password'>Password</label>
-				<Field input='password' id='user-password' name='password' placeholder='123abc@' />
+						{touched.password && errors.password && <p>{errors.password}</p>}
+						<label htmlFor='user-password'>Password</label>
+						<Field input='password' id='user-password' name='password' placeholder='123abc@' />
 
-				<Button type='submit' style={{ background: '#ff5e13' }}>
-					Sign Me up Scotty....
-				</Button>
-			</Form>
+						<Button type='submit' style={{ background: '#ff5e13' }}>
+							Sign Me up Scotty....
+						</Button>
+					</Form>
+				</div>
+			</FormWrapper>
 		</div>
 	);
 }
@@ -72,3 +77,11 @@ let axiosConfig = {
 		'Content-Type': 'application/json',
 	},
 };
+
+const FormWrapper = styled.div`
+	background: '#C4C4C4';
+	height: '274px';
+	width: '333px';
+	margin: '100px auto';
+	border-radius: '29px';
+`;
