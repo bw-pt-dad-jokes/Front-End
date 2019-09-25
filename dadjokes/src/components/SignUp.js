@@ -2,13 +2,14 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
+import { Button, Form as Forms, Message } from 'semantic-ui-react';
 
 function SignUp({ errors, touched, status }) {
 	return (
 		<div>
 			<h3>To see all Dad Jokes Please sign up fro an an account:</h3>
 			<Form>
-				{touched.email && errors.username && <p>{errors.username}</p>}
+				{touched.username && errors.username && <Message color='red'>{errors.username}</Message>}
 				<label htmlFor='user-username'>User Email</label>
 				<Field input='text' id='user-username' name='username' placeholder='Username...' />
 
@@ -16,7 +17,9 @@ function SignUp({ errors, touched, status }) {
 				<label htmlFor='user-password'>Password</label>
 				<Field input='password' id='user-password' name='password' placeholder='123abc@' />
 
-				<button type='submit'>Sign Me up Scotty....</button>
+				<Button type='submit' style={{ background: '#ff5e13' }}>
+					Sign Me up Scotty....
+				</Button>
 			</Form>
 		</div>
 	);
@@ -30,10 +33,7 @@ export default withFormik({
 		};
 	},
 	validationSchema: yup.object().shape({
-		username: yup
-			.string()
-			.required('username Required')
-			.trim(),
+		username: yup.string().required('username Required'),
 		password: yup
 			.string()
 			.required()
@@ -42,7 +42,7 @@ export default withFormik({
 	}),
 	handleSubmit: (values) => {
 		// build out the submit function with axios here...,
-		console.log(values)
+		console.log(values);
 		axios
 			.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/register', values, axiosConfig)
 			.then((res) => console.log('r', res))
