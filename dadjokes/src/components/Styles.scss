@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+.ui.button,
+.ui.big.button {
+	background-color: $button-color;
+	&:link {
+		background-color: $button-color;
+	}
+	&:visited {
+		background-color: $button-visited;
+		color: $text-visited;
+	}
+	&:visited:hover {
+		background-color: $button-visited;
+		color: $text-visited;
+	}
+	&:hover {
+		background-color: $button-highlight;
+	}
+	&:active {
+	}
+}
+
+.ui.button {
+	margin-top: 0;
+	// padding-top: 0;
+}
+
+.signup {
+	margin-bottom: 25px;
+	// padding-top: 15px;
+}

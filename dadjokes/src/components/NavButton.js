@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
+import './Styles.scss';
 
 function NavButtons(props) {
 	const { linkText, buttonText } = props;
 	return (
 		<>
 			<NavLink to={linkText}>
-				<button>{buttonText}</button>
+				<Button size='big'>{buttonText}</Button>
 			</NavLink>
 		</>
 	);
