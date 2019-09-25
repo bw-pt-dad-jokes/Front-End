@@ -9,8 +9,21 @@ function SignUp({ errors, touched, status }) {
 	return (
 		<div>
 			<h3>To see all Dad Jokes Please sign up fro an an account:</h3>
-			<FormWrapper>
-				<div>
+			<div
+				style={{
+					background: '#C4C4C4',
+					height: '274px',
+					width: '333px',
+					margin: '100px auto',
+					borderRadius: '29px',
+				}}
+			>
+				<div
+					style={{
+						marginTop: '100px',
+						padding: '70px',
+					}}
+				>
 					<Form>
 						{touched.username && errors.username && <Message color='red'>{errors.username}</Message>}
 						<label htmlFor='user-username'>User Email</label>
@@ -25,7 +38,7 @@ function SignUp({ errors, touched, status }) {
 						</Button>
 					</Form>
 				</div>
-			</FormWrapper>
+			</div>
 		</div>
 	);
 }
@@ -51,24 +64,7 @@ export default withFormik({
 		axios
 			.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/register', values, axiosConfig)
 			.then((res) => console.log('r', res))
-			.catch(function(error) {
-				if (error.response) {
-					// The request was made and the server responded with a status code
-					// that falls out of the range of 2xx
-					console.log(error.response.data);
-					console.log(error.response.status);
-					console.log(error.response.headers);
-				} else if (error.request) {
-					// The request was made but no response was received
-					// `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-					// http.ClientRequest in node.js
-					console.log(error.request);
-				} else {
-					// Something happened in setting up the request that triggered an Error
-					console.log('Error', error.message);
-				}
-				console.log(error.config);
-			});
+			.catch((err) => console.log('Error', err));
 	},
 })(SignUp);
 
@@ -77,11 +73,3 @@ let axiosConfig = {
 		'Content-Type': 'application/json',
 	},
 };
-
-const FormWrapper = styled.div`
-	background: '#C4C4C4';
-	height: '274px';
-	width: '333px';
-	margin: '100px auto';
-	border-radius: '29px';
-`;
