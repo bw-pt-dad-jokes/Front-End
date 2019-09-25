@@ -13,27 +13,17 @@ const LoginSchema = yup.object().shape({
 });
 
 function submitButton(values) {
-	console.log(values.username)
+	let axiosConfig = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	};
 
-	// axios({
-	// 	method: 'post',
-	// 	url: '/login',
-	// 	data: {
-	// 	  username: 'Finn',
-	// 	  lastName: 'Williams'
-	// 	}
-	//   });
+	axios.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/login', values , axiosConfig )
+	  .then((res) => { console.log(res)})
 
-	// axios
-	// 	.post('https://reqres.in/api/users', values)
-	// 	.then((res) => {
-	// 		console.log(res);
-	// 	})
-	// 	.catch((err) => {
-	// 		console.log('Err', err);
-	// 	});
+
 }
-
 
 export default function LoginPage() {
 	return (
@@ -61,7 +51,6 @@ export default function LoginPage() {
 						}}
 						render={({ handleSubmit, values, touched, errors }) => (
 							<Forms onSubmit={handleSubmit}>
-								{console.log(errors)}
 								{errors.username && touched.username && <Message color='red'>{errors.username}</Message>}
 								<Field
 									name='username'
