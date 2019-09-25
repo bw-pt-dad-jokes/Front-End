@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button, Form as Forms, Container, Message } from 'semantic-ui-react';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
 const LoginSchema = yup.object().shape({
-	username: yup.string().required('Username is required'),
+	username: yup.string().required('Username is required!'),
 	password: yup
 		.string()
 		.required('Password is required')
@@ -12,14 +13,16 @@ const LoginSchema = yup.object().shape({
 });
 
 function submitButton(values) {
-	axios
-		.post('https://reqres.in/api/users', values)
-		.then((res) => {
-			console.log(res);
-		})
-		.catch((err) => {
-			console.log('Err', err);
-		});
+	let axiosConfig = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	};
+
+	axios.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/login', values , axiosConfig )
+	  .then((res) => { console.log(res)})
+
+
 }
 
 export default function LoginPage() {
@@ -47,8 +50,8 @@ export default function LoginPage() {
 							submitButton(values);
 						}}
 						render={({ handleSubmit, values, touched, errors }) => (
-							<Form onSubmit={handleSubmit}>
-								{errors.username && touched.username && <p className='error'>{errors.username}</p>}
+							<Forms onSubmit={handleSubmit}>
+								{errors.username && touched.username && <Message color='red'>{errors.username}</Message>}
 								<Field
 									name='username'
 									value={values.username}
@@ -58,7 +61,7 @@ export default function LoginPage() {
 									}}
 								/>{' '}
 								<br />
-								{errors.password && touched.password && <p className='error'>{errors.password}</p>}
+								{errors.password && touched.password &&  <p className='error'>{errors.password}</p>}
 								<Field
 									type='password'
 									name='password'
@@ -69,8 +72,8 @@ export default function LoginPage() {
 									}}
 								/>{' '}
 								<br />
-								<button type='submit'>Login Me In Scotty.....</button>
-							</Form>
+								<Button type='submit' style={{background: '#ff5e13'}}>Login Me In Scotty.....</Button>
+							</Forms>
 						)}
 					/>
 				</div>

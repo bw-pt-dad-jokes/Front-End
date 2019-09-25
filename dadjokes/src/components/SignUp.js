@@ -30,7 +30,7 @@ export default withFormik({
 		};
 	},
 	validationSchema: yup.object().shape({
-		email: yup
+		username: yup
 			.string()
 			.required('username Required')
 			.trim(),
@@ -42,6 +42,7 @@ export default withFormik({
 	}),
 	handleSubmit: (values) => {
 		// build out the submit function with axios here...,
+		console.log(values)
 		axios
 			.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/register', values, axiosConfig)
 			.then((res) => console.log('r', res))
