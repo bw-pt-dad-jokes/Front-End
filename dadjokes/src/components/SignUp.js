@@ -8,7 +8,7 @@ import './Styles.scss';
 function SignUp({ errors, touched, status }) {
 	return (
 		<div>
-			<h3>To see all Dad Jokes Please sign up fro an an account:</h3>
+			<h3>To see all Dad Jokes Please sign up for an an account:</h3>
 			<div
 				style={{
 					background: '#C4C4C4',
