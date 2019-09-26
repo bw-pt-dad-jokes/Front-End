@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Card } from 'semantic-ui-react';
+import { Grid, Card, Segment, Dimmer, Loader } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 function JokesDisplay() {
@@ -12,6 +12,18 @@ function JokesDisplay() {
 			.then((res) => setJokes(res.data))
 			.catch((err) => console.log('Error ', err));
 	}, []);
+
+	console.log('jokes', jokes);
+	if (!jokes)
+		return (
+			<>
+				<Segment>
+					<Dimmer active>
+						<Loader>Loading...</Loader>
+					</Dimmer>
+				</Segment>
+			</>
+		);
 
 	return (
 		<JokeWrapper>
