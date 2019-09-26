@@ -82,7 +82,7 @@ export default withFormik({
 		// build out the submit function with axios here...,
 		console.log(values);
 		axios
-			.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/register', values, axiosConfig)
+			.post('https://dadjokeproject.herokuapp.com/api/auth/register', values, axiosConfig)
 			.then((res) => console.log('r', res))
 			.catch((err) => console.log('Error', err));
 	},
