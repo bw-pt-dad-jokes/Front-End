@@ -27,19 +27,32 @@ Your the kinda dad that is always looking for that next corny or goofy joke to p
 [axios](https://github.com/axios/axios)
 [styled-components](https://www.styled-components.com/)
 
+## Authors
+
+---
+
+- Ron Hughes - Frontend Team
+- Michael Williams - Frontend Team
+
 ## Acknowledgments
 
 ---
 
 - Steve Lanier - our Project manager
-- Ron Hughes - Frontend Team
-- Michael Williams - Frontend Team
 - Issac Middleton - Backend Team
 - Erin Davis - Marketing Page Team
 - Gabriel Lopez - Marketing page team
 
-* Thank you to all of the dependency owners and writers, without you the ecosystem would not be the same.
-* Thank you to those who inspire us to do what we do.
-* Thank you to those who helped us not reinvent the wheel hats off to you!
+---
 
-[Product Canvas](https://docs.google.com/document/d/1CUX002zg71zz-sN-h-92YUC3oW-oYzZzTR9TRcRJBVI/edit#)
+- Thank you to all of the dependency owners and writers, without you the ecosystem would not be the same.
+- Thank you to those who inspire us to do what we do.
+- Thank you to those who helped us not reinvent the wheel hats off to you!
+
+### License
+
+Please see LICENSE file for details.
+
+#### Additional
+
+[Product Canvas](https://docs.google.com/document/d/1CUX002zg71zz-sN-h-92YUC3oW-oYzZzTR9TRcRJBVI/edit#) for Application.
