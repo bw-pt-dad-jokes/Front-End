@@ -19,7 +19,7 @@ function submitButton(values) {
 		},
 	};
 
-	axios.post('https://dadjokes-buildweeks.herokuapp.com/api/auth/login', values , axiosConfig )
+	axios.post('https://dadjokeproject.herokuapp.com/api/auth/login', values , axiosConfig )
 	  .then((res) => { console.log(res)})
 
 
