@@ -8,7 +8,7 @@ function JokesDisplay() {
 
 	useEffect(() => {
 		axios
-			.get('https://dadjokes-buildweeks.herokuapp.com/api/publicJokes')
+			.get('https://dadjokeproject.herokuapp.com/api/jokes')
 			.then((res) => setJokes(res.data))
 			.catch((err) => console.log('Error ', err));
 	}, []);
@@ -22,7 +22,7 @@ function JokesDisplay() {
 							<JokerGrid>
 								<JokeCard>
 									<Card.Content>
-										<Card.Description>{joke.joke}</Card.Description>
+										<Card.Description>{joke.dadjoke}</Card.Description>
 									</Card.Content>
 								</JokeCard>
 							</JokerGrid>
