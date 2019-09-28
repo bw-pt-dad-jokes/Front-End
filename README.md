@@ -51,21 +51,16 @@ pull requests to enhance the design or layout are welcome.
 [axios](https://github.com/axios/axios)
 [styled-components](https://www.styled-components.com/)
 
-### Authors
+### Team
 
 ---
 
-- Ron Hughes - Frontend Team
-- Michael Williams - Frontend Team
-
-### Acknowledgments
-
----
-
-- Steve Lanier - our Project manager
-- Issac Middleton - Backend Team
-- Erin Davis - Marketing Page Team
-- Gabriel Lopez - Marketing page team
+- [Ron Hughes](https://www.github.com/ron-hughes) - Frontend Team
+- [Michael Williams](https://github.com/mikeyjwilliams) - Frontend Team
+- [Steve Lanier](https://github.com/sklanier) - Project manager
+- [Issac Middleton](https://github.com/ibomiddleton) - Backend Team
+- [Erin Davis](https://github.com/erin-davis) - Marketing Page Team
+- [Gabriel Lopez](https://github.com/BrownBatz) - Marketing page team
 
 ---
 
