@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Grid, Card, Segment, Dimmer, Loader } from 'semantic-ui-react';
+import { Grid, Card, Segment, Dimmer, Loader, Modal, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 function JokesDisplay() {
@@ -34,7 +34,13 @@ function JokesDisplay() {
 							<JokerGrid>
 								<JokeCard>
 									<Card.Content>
-										<Card.Description>{joke.dadjoke}</Card.Description>
+										<Modal trigger={<Card.Description>{joke.dadjoke}</Card.Description>} closeIcon>
+											<Modal.Content>
+												<Card.Content>
+													<Card.Description>{joke.dadjoke}</Card.Description>
+												</Card.Content>
+											</Modal.Content>
+										</Modal>
 									</Card.Content>
 								</JokeCard>
 							</JokerGrid>
