@@ -6,6 +6,10 @@ import { Button, Message } from 'semantic-ui-react';
 import './Styles.scss';
 
 function SignUp({ errors, touched, status }) {
+	const signedUp = (e) => {
+		alert('You are signed up!');
+	};
+
 	return (
 		<div>
 			<h3>To see all Dad Jokes Please sign up for an an account:</h3>
@@ -50,7 +54,7 @@ function SignUp({ errors, touched, status }) {
 							}}
 						/>
 
-						<Button type='submit' style={{ background: '#ff5e13' }}>
+						<Button type='submit' onClick={signedUp} style={{ background: '#ff5e13' }}>
 							Sign Me up Scotty....
 						</Button>
 					</Form>
