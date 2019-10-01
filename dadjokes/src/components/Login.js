@@ -25,6 +25,10 @@ function submitButton(values) {
 
 }
 
+const loggedIn = (e) => {
+	alert('You are logged in!');
+};
+
 export default function LoginPage() {
 	return (
 		<>
@@ -72,7 +76,7 @@ export default function LoginPage() {
 									}}
 								/>{' '}
 								<br />
-								<Button type='submit' style={{background: '#ff5e13'}}>Login Me In Scotty.....</Button>
+								<Button type='submit' onClick={loggedIn} style={{background: '#ff5e13'}}>Login Me In Scotty.....</Button>
 							</Forms>
 						)}
 					/>
